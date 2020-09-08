@@ -1,0 +1,44 @@
+<script>
+    var frogcount = 0;
+</script>
+<html>
+    <head>
+        <title>
+            0 Frogs - Frog Clicker
+        </title>
+    </head>
+    <body>
+
+        <a href=# onclick="add()"><img src="img/frog.png"></a>
+        <br>
+        You Have:
+        <input type="text" id="text" disabled style= text-align:center>
+        <script>
+            function add() {
+                frogcount = frogcount + 1
+                document.getElementById('text').value = frogcount
+                document.title = frogcount + ' Frogs - Frog Clicker';
+            }
+        </script>
+        Frogs.
+        <br>
+
+        <button>
+            <a href="#" onclick="save()"> Save</a>
+        </button>
+        <button>
+            <a href="#" onclick="Load()"> Load</a>
+        </button>
+
+        <script>
+            function Save() {
+                localStorage.setItem("frogcount", frogcount);
+            }
+            function Laod() {
+                frogcount = localStorage.getItem("frogcount");
+                frogcount = parseInt(frogcount);
+                document.getElementById('text').value = frogcount;
+            }
+        </script>
+    </body>
+</html>
